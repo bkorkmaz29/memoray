@@ -1,11 +1,13 @@
 import { StyledCard } from './Card.styled';
+import { useState } from 'react';
 
-const Card = ({ reveal, setReveal }) => {
+const Card = () => {
 
-    const isRevealed = reveal ? true : false;
+  const [reveal, setReveal] = useState(false);
+ 
 
   return (
-    <StyledCard revealed={isRevealed} onClick={() => setReveal(!reveal)} />
+    <StyledCard reveal={reveal} onClick={() => setReveal(!reveal)} />
   )
 }
 

@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 export const StyledCard = styled.div`
--webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
+-webkit-animation: fadein 2s; 
+       -moz-animation: fadein 2s; 
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s; 
             animation: fadein 2s;
   @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   &:hover {
     box-shadow:
     inset 0 0 50px #fff,
@@ -20,14 +20,14 @@ export const StyledCard = styled.div`
     inset 20px 0 300px #00FFF3,
     inset -20px 0 300px #00FFF3,
     0 0 50px #f0f,
-    -5px 0 30px #f0f,
-    -5px 0 30px #fff; 
+    -5px 0 300px #f0f,
+    -5px 0 300px #fff; 
   }
-  transform: ${({ reveal }) => reveal ? 'rotateY(90deg)' : 'rotateY(0deg)'};  
+  transform: ${({ reveal }) => reveal ? 'rotateY(0deg)' : 'rotateY(180deg)'};  
   box-shadow:
     inset 0 0 50px #fff,
     inset 20px 0 80px #f0f,
-    inset -20px 0 80px #E400FF,
+    inset -20px 0 80px #00FFF3,
     inset 20px 0 300px #00FFF3,
     inset -20px 0 300px #00FFF3,
     0 0 50px #f0f,
