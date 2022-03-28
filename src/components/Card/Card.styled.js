@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
+
 
 export const StyledCard = styled.div`
 -webkit-animation: fadein 2s; 
@@ -23,7 +24,8 @@ export const StyledCard = styled.div`
     -5px 0 300px #f0f,
     -5px 0 300px #fff; 
   }
-  transform: ${({ reveal }) => reveal ? 'rotateY(0deg)' : 'rotateY(180deg)'};  
+  
+
   box-shadow:
     inset 0 0 50px #fff,
     inset 20px 0 80px #f0f,
@@ -33,4 +35,9 @@ export const StyledCard = styled.div`
     0 0 50px #f0f,
     -5px 0 30px #f0f,
     -5px 0 30px #fff; 
+
+
+
+
 `
+  
