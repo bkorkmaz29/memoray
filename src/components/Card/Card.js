@@ -11,10 +11,9 @@ const Card = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {
   return (
     <StyledCard reveal={isFlipped}
      onClick={handleClick}>
-  {isFlipped &&   <div className="front">
+    {isFlipped && !isInactive &&  <div className="front">
       <img src={card.image} alt="crd" />
-       </div> }
-       <div className="back"></div>
+       </div> }      
      </StyledCard>
   )
 }

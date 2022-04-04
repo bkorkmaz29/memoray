@@ -10,7 +10,7 @@ import Header from "./components/Header/Header";
 //import imageArray from "./constants/data/imageArray";
 
 function App() {
-  const [started, setStarted] = useState(false);
+  const [start, setStart] = useState(false);
 
   const imageArray = [
     {
@@ -51,11 +51,12 @@ function App() {
 
 
   return (
-    <div className='App'>
+    <div className="App">
+    <Container>
       <Header />
-      {!started && <StartButton isStarted = {() => setStarted(true)} />}
-      { started && <Timer />}
-      <Board images={imageArray}/>  
+      {!start && <StartButton isStarted = {() => setStart(true)} />}
+      { start && <Board images={imageArray} isStarted={start}/> }
+    </Container>
     </div>
   );
 }

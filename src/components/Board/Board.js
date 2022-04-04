@@ -4,15 +4,18 @@ import { StyledBoard } from './Board.styled';
 import Card from "../Card/Card"
 
 
-const Board = ( {images} ) => {
+const Board = ( {images, isStarted} ) => {
 
   const [cards, setCards] = useState(
     () => shuffle(images).concat(images))
+  const [start, setStart] = useState(isStarted);
   const [openCards, setOpenCards] = useState([]);
   const [clearedCards, setClearedCards] = useState({});
   const timeout = useRef(null);
   const [shouldDisableAllCards, setShouldDisableAllCards] = useState(false);
   
+  
+
   const disable = () => {
     setShouldDisableAllCards(true);
   };
@@ -25,6 +28,7 @@ const Board = ( {images} ) => {
     enable();
     if (cards[first].type === cards[second].type) {
       setClearedCards((prev) => ({ ...prev, [cards[first].type]: true }));
+      setOpenCards(([]))
       return;
     } else {
     handleRestart();
@@ -84,6 +88,7 @@ const Board = ( {images} ) => {
     return Boolean(clearedCards[card.type]);
   };
   return (
+   
     <StyledBoard>
       {cards.map((card, index) => {
           return (
@@ -96,7 +101,7 @@ const Board = ( {images} ) => {
               isInactive={checkIsInactive(card)}
               isFlipped={checkIsFlipped(index)}
             />
-          );
+          )
         })}   
     </StyledBoard>
   )

@@ -1,3 +1,5 @@
+import { StyledStartButton } from './StartButton.styled';
+
 const StartButton = ({isStarted}) => {
 
     const startGame = () => {
@@ -7,7 +9,7 @@ const StartButton = ({isStarted}) => {
     }
 
   return (
-    <button onClick={startGame}>Start</button>
+    <StyledStartButton onClick={startGame}>Start</StyledStartButton >
   )
 }
 
