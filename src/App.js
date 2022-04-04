@@ -10,7 +10,7 @@ import Header from "./components/Header/Header";
 //import imageArray from "./constants/data/imageArray";
 
 function App() {
-  const [start, setStart] = useState(false);
+  const [game, setGame] = useState(false);
 
   const imageArray = [
     {
@@ -54,8 +54,8 @@ function App() {
     <div className="App">
     <Container>
       <Header />
-      {!start && <StartButton isStarted = {() => setStart(true)} />}
-      { start && <Board images={imageArray} isStarted={start}/> }
+      {!game &&  <StartButton isStarted = {() => setGame(true)} />}
+      { game &&  <Board images={imageArray} game={game}/> }
     </Container>
     </div>
   );

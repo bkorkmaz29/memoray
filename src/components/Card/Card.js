@@ -1,19 +1,33 @@
 import { StyledCard } from './Card.styled';
-import { useState } from 'react';
+import { useState, useEffect } from 'react'
 
 const Card = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {
+  
+  const [className, setClassName] = useState('back');
 
-  //const [reveal, setReveal] = useState(false);
+  useEffect(() => {
+    if (isDisabled) {
+      setClassName('disabled') 
+    }
+  }, [isDisabled])
+
+  useEffect(() => {
+    if (isFlipped) {
+      setClassName('front') 
+    }
+  }, [isFlipped])
 
   const handleClick = () => {
-      !isFlipped && !isDisabled && onClick(index);    
+      !isFlipped && !isDisabled && onClick(index);  
   };
   return (
-    <StyledCard reveal={isFlipped}
+    <StyledCard 
+    className={className}
      onClick={handleClick}>
-    {isFlipped && !isInactive &&  <div className="front">
-      <img src={card.image} alt="crd" />
-       </div> }      
+    {isFlipped && !isInactive && 
+      <img src={card.image} alt="crd" />}  
+    {isInactive &&  <img src={card.image} alt="crd" />}  
+      
      </StyledCard>
   )
 }

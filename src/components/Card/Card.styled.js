@@ -1,7 +1,9 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled from 'styled-components'
 
 
-export const StyledCard = styled.div`
+export const StyledCard = styled.div.attrs(props => ({
+  className: props.className
+}))`
 -webkit-animation: fadein 2s; 
        -moz-animation: fadein 2s; 
         -ms-animation: fadein 2s; 
@@ -11,33 +13,39 @@ export const StyledCard = styled.div`
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
+
   width: 100px;
   height: 100px;
+ 
   &:hover {
     box-shadow:
     inset 0 0 50px #fff,
-    inset 20px 0 80px #fff,
-    inset -20px 0 80px #fff,
-    inset 20px 0 300px #00FFF3,
-    inset -20px 0 300px #00FFF3,
-    0 0 50px #f0f,
-    -5px 0 300px #f0f,
-    -5px 0 300px #fff; 
+    inset 0 0 50px #fff,
+    inset 0 -20px 80px #01FEE5,
+    inset 20px 0 100px #fff,
+    inset -20px 0 100px #01FEE5,
+    0 0 100px #f0f,
+    0 0 300px #f0f,
+    0 0 500px #f0f
+  }
+
+  &:active {
+    box-shadow:
+    inset 0 0 10px #f0f,
+    inset 0 0 20px #f0f,
+    inset 0 90px 100px #000,
+    inset 20px 0 100px #f0f,
+    inset -20px 0 100px #f0f,
+    0 0 30px #f0f,
+    0 0 30px #f0f,
+    0 0 30px #f0f; 
   }
   
-
+  
   box-shadow:
-    inset 0 0 50px #fff,
-    inset 20px 0 80px #f0f,
-    inset -20px 0 80px #00FFF3,
-    inset 20px 0 300px #00FFF3,
-    inset -20px 0 300px #00FFF3,
-    0 0 50px #f0f,
-    -5px 0 30px #f0f,
-    -5px 0 30px #fff; 
-
-
-
-
+    0 0 20px #f0f,
+    0px 0 1px #f0f,
+    0px 0 5px #fff; 
 `
   
