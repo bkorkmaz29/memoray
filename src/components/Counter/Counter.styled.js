@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.h1`
+export const StyledCounter = styled.h1`
   -webkit-animation: fadein 2s;
   -moz-animation: fadein 2s;
   -ms-animation: fadein 2s;
@@ -14,7 +14,7 @@ export const StyledHeader = styled.h1`
       opacity: 1;
     }
   }
-  font-size: 96px;
+  font-size: 84px;
   text-align: center;
   margin: auto;
   background: #19f0ff;

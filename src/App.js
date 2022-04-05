@@ -1,62 +1,33 @@
-import { useEffect, useState, useRef } from 'react'
+import { useState } from "react";
 
-import Board from "./components/Board/Board"
-import Card from "./components/Card/Card"
-import Timer from "./components/Timer/Timer"
-import StartButton from "./components/StartButton/StartButton"
-import { Container } from "./components/Container"
-import './App.css';
+import { Container } from "./components/Container";
+import { ButtonsContainer } from "./components/ButtonsContainer";
+import Board from "./components/Board/Board";
+import Button from "./components/Button/Button";
+import RulesPage from "./components/RulesPage/RulesPage";
+import "./App.css";
 import Header from "./components/Header/Header";
-//import imageArray from "./constants/data/imageArray";
+import imageArray from "./constants/data.js";
 
 function App() {
   const [game, setGame] = useState(false);
-
-  const imageArray = [
-    {
-      type: "cbgp",
-      image: require(`./assets/cbgp.png`)
-    },
-    {
-      type: "cbop",
-      image: require(`./assets/cbop.png`)
-    },
-    {
-      type: "cprb",
-      image: require(`./assets/cprb.png`)
-    },
-    {
-      type: "crpb",
-      image: require(`./assets/crpb.png`)
-    },
-    {
-      type: "dbtp",
-      image: require(`./assets/dbtp.png`)
-    },
-    {
-      type: "dbyr",
-      image: require(`./assets/dbyr.png`)
-    },
-    {
-      type: "dbpy",
-      image: require(`./assets/dpby.png`)
-    },
-    {
-      type: "dybb",
-      image: require(`./assets/dybb.png`)
-    },
-
-  ];
-
-
+  const [rules, setRules] = useState(false);
 
   return (
     <div className="App">
-    <Container>
-      <Header />
-      {!game &&  <StartButton isStarted = {() => setGame(true)} />}
-      { game &&  <Board images={imageArray} game={game}/> }
-    </Container>
+      <Container>
+        {!game && !rules && (
+          <>
+            <Header />
+            <ButtonsContainer>
+              <Button text={"start"} onClick={() => setGame(true)} />
+              <Button text={"rules"} onClick={() => setRules(!rules)} />
+            </ButtonsContainer>
+          </>
+        )}
+        {game && <Board images={imageArray} game={(e) => setGame(e)} />}
+        {!game && rules && <RulesPage button={() => setRules(!rules)} />}
+      </Container>
     </div>
   );
 }

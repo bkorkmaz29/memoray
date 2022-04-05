@@ -1,9 +1,7 @@
-import { StyledHeader } from './Header.styled';
+import { StyledHeader } from "./Header.styled";
 
 const Header = () => {
-  return (
-    <StyledHeader>MEMORAY</StyledHeader>
-  )
-}
+  return <StyledHeader>MEMORAY</StyledHeader>;
+};
 
-export default Header
+export default Header;

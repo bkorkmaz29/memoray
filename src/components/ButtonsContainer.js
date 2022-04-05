@@ -1,0 +1,9 @@
+import styled from "styled-components";
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 30vh;
+  margin: auto;
+`;
