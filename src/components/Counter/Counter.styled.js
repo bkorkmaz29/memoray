@@ -15,6 +15,7 @@ export const StyledCounter = styled.h1`
     }
   }
   font-size: 84px;
+  font-family: 'Monoton', cursive;
   text-align: center;
   margin: auto;
   background: #19f0ff;

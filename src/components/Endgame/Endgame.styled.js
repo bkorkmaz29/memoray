@@ -23,6 +23,7 @@ export const StyledEndgame = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
+  font-family: Verdana;
 
   h1 {
     margin-top: 100px;

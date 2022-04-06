@@ -24,6 +24,7 @@ export const StyledRulesPage = styled.div`
   justify-content: center;
   margin: auto;
   border: 1px solid aqua;
+  font-family: Verdana;
 
   ul {
     margin: auto;

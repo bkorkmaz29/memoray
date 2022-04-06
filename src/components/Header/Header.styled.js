@@ -14,7 +14,8 @@ export const StyledHeader = styled.h1`
       opacity: 1;
     }
   }
-  font-size: 96px;
+  font-size: 156px;
+  font-family: 'Monoton', cursive;
   text-align: center;
   margin: auto;
   background: #19f0ff;
