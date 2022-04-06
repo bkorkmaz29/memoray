@@ -14,8 +14,8 @@ export const StyledEndgame = styled.div`
       opacity: 1;
     }
   }
-  background-color: black;
 
+  background-color: black;
   width: 70vw;
   height: 70vh;
   display: flex;

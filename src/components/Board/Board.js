@@ -34,14 +34,14 @@ const Board = ({ images, isStarted, game }) => {
       timeout.current = setTimeout(() => {
         setOpenCards([]);
         enable();
-      }, 500);
+      }, 50);
     }
   };
 
   useEffect(() => {
     let timeout = null;
     if (openCards.length === 2) {
-      timeout = setTimeout(evaluate, 300);
+      timeout = setTimeout(evaluate, 200);
     }
     return () => {
       clearTimeout(timeout);
