@@ -10,6 +10,7 @@ A shiny memory card game with a twist.
 
 ## TODOS
 - Mobile compatibility
+- Difficulty selection
 
 ### [Live Demo](https://memoray.vercel.app/)
 
