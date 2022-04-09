@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from '../devices';
 
 export const ButtonsContainer = styled.div`
   -webkit-animation: fadein 2s;
@@ -15,8 +16,29 @@ export const ButtonsContainer = styled.div`
     }
   }
   display: flex;
-  flex-direction: row;
-  width: 20vw;
-  height: 30vh;
+  
+  width: 100%;
+  height: 50%;
   margin: auto;
+
+  @media ${devices.mobileM} {
+    flex-direction: column;
+    max-width: 375px;
+  }
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    max-width: 768px;
+  }
+
+  @media ${devices.laptop} {
+    flex-direction: row;
+    max-width: 1024px;
+  }
+
+  @media ${devices.desktop} {
+    max-width: 2560px;
+    flex-direction: row;
+  }
+
 `;

@@ -16,7 +16,7 @@ export const StyledCard = styled.div.attrs((props) => ({
       opacity: 1;
     }
   }
-
+  cursor: pointer;
   width: 100px;
   height: 100px;
 

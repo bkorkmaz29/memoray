@@ -14,7 +14,7 @@ function App() {
   const [rules, setRules] = useState(false);
 
   return (
-    <div className="App">
+
       <Container>
         {!game && !rules && (
           <>
@@ -28,7 +28,7 @@ function App() {
         {game && <Board images={imageArray} game={(e) => setGame(e)} />}
         {!game && rules && <RulesPage button={() => setRules(!rules)} />}
       </Container>
-    </div>
+
   );
 }
 

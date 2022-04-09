@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { devices } from '../../devices';
+
 
 export const StyledHeader = styled.h1`
   -webkit-animation: fadein 2s;
@@ -45,4 +47,28 @@ export const StyledHeader = styled.h1`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+
+  @media ${devices.mobileM} {
+    max-width: 375px;
+    font-size: 58px;
+    font-stretch: extra-expanded;
+  }
+
+  @media ${devices.tablet} {
+    max-width: 768px;
+    font-size: 96px;
+  }
+
+
+
+  @media ${devices.laptop} {
+    max-width: 1024px;
+    font-size: 156px;
+  }
+
+  @media ${devices.desktop} {
+    max-width: 2560px;
+    font-size: 156px;
+  }
 `;
