@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { devices } from '../../devices';
 
 
-export const StyledStartButton = styled.div`
+export const StyledButton = styled.div`
   background-color: #e02d2d;
   border-radius: 4px;
   display: inline-block;
@@ -26,21 +26,23 @@ export const StyledStartButton = styled.div`
 
   @media ${devices.mobileM} {
     max-width: 375px;
-    font-size: 28px;
+    font-size: 20px;
   }
 
   @media ${devices.tablet} {
     max-width: 768px;
-    font-size: 34px;
+    font-size: 22px;
   }
 
   @media ${devices.laptop} {
     max-width: 1024px;
-    font-size: 48px;
+    padding: 24px 34px;
+    font-size: 22px;
   }
 
   @media ${devices.desktop} {
     max-width: 2560px;
-    font-size: 56px;
+    padding: 24px 34px;
+    font-size: 26px;
   }
 `;

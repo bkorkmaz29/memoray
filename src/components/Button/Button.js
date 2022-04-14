@@ -1,7 +1,7 @@
-import { StyledStartButton } from "./Button.styled";
+import { StyledButton } from "./Button.styled";
 
 const StartButton = ({ onClick, text }) => {
-  return <StyledStartButton onClick={onClick}>{text}</StyledStartButton>;
+  return <StyledButton onClick={onClick}>{text}</StyledButton>;
 };
 
 export default StartButton;

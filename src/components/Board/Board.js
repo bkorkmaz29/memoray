@@ -3,9 +3,9 @@ import { useEffect, useState, useRef } from "react";
 import { StyledBoard } from "./Board.styled";
 import Card from "../Card/Card";
 import Endgame from "../Endgame/Endgame";
-import Counter from "../Counter/Counter";
+import Panel from "../Panel/Panel";
 
-const Board = ({ images, isStarted, game }) => {
+const Board = ({ images, onBack, game }) => {
   const [cards, setCards] = useState(() => shuffle(images.concat(images)));
   const [openCards, setOpenCards] = useState([]);
   const [clearedCards, setClearedCards] = useState({});
@@ -75,6 +75,7 @@ const Board = ({ images, isStarted, game }) => {
   const handleRestart = () => {
     setClearedCards({});
     setOpenCards([]);
+    setCards(() => shuffle(images.concat(images)))
     setShouldDisableAllCards(false);
     setCount(0);
     setGameOver(false);
@@ -99,9 +100,10 @@ const Board = ({ images, isStarted, game }) => {
   const checkIsInactive = (card) => {
     return Boolean(clearedCards[card.type]);
   };
+
   return (
     <>
-      {!gameOver && <Counter count={count} />}
+      {!gameOver && <Panel count={count} onBack={onBack} onRestart={() => handleRestart()}/>}
       <StyledBoard>
         {!gameOver &&
           cards.map((card, index) => {

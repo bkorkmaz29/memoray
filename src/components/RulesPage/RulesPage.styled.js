@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../devices";
 
 export const StyledRulesPage = styled.div`
   -webkit-animation: fadein 2s;
@@ -24,11 +25,31 @@ export const StyledRulesPage = styled.div`
   justify-content: center;
   margin: auto;
   border: 1px solid aqua;
-  font-family: Verdana;
+  
 
   ul {
     margin: auto;
     color: white;
-    font-size: 36px;
+    @media ${devices.mobileM} {
+      max-width: 375px;
+      font-size: 22px;
+    }
+
+    @media ${devices.tablet} {
+      max-width: 768px;
+      font-size: 24px;
+    }
+
+    @media ${devices.laptop} {
+      max-width: 1024px;
+
+      font-size: 38px;
+    }
+
+    @media ${devices.desktop} {
+      max-width: 2560px;
+
+      font-size: 42px;
+    }
   }
 `;

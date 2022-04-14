@@ -25,7 +25,7 @@ function App() {
             </ButtonsContainer>
           </>
         )}
-        {game && <Board images={imageArray} game={(e) => setGame(e)} />}
+        {game && <Board images={imageArray} game={(e) => setGame(e)} onBack={() => {setGame(false)}}/>}
         {!game && rules && <RulesPage button={() => setRules(!rules)} />}
       </Container>
 
