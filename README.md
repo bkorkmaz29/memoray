@@ -9,7 +9,6 @@ A shiny memory card game with a twist.
 -   Styled-Components
 
 ## TODOS
-- Mobile compatibility
 - Difficulty selection
 
 ### [Live Demo](https://memoray.vercel.app/)
